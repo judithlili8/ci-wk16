@@ -3,9 +3,9 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
-    stages{   
-        agent {docker { image 'maven:3-amazoncorretto-17-debian' }}    
+    stages{  
         stage('sonarqube scan'){
+            agent {docker { image 'maven:3-amazoncorretto-17-debian' }}   
             steps{
                 withSonarQubeEnv('sonarserver'){
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=judithlili8_ci-wk16'
