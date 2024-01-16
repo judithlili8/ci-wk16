@@ -3,11 +3,18 @@ pipeline {
     tools {
         maven 'M2_HOME'
     }
+            stage(sonarqube scan) {
+            steps{
+                sh 'mvn sonar:sonar'
+            }
+        }
     stages{
         stage(' all maven commands'){
             steps{
                 sh 'mvn clean test compile install package'
             }
         }
+
+    
     }
 }
