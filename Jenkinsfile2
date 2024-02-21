@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=judithlili8_ci-wk16'
              //  sh 'mvn sonar:sonar'
             }
-            }
+          }
         }
         stage('all maven commands'){
             steps{
