@@ -24,9 +24,6 @@ pipeline {
                 target/bio*.jar \
                 "http://52.201.146.72:8081/artifactory/geoapp/"'
             }
-
         }
-
-    
     }
 }
